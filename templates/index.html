@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Metadati, fogli di stile, script, ecc. -->
+    <title>VortexAI</title>
+    <link rel="stylesheet" href="/static/style.css"> <!-- Collegamento al foglio di stile CSS -->
+    <!-- Collegamenti a font esterni, icona del sito, script, ecc. -->
+</head>
+
+<body>
+    <!-- Barra di navigazione -->
+    <nav>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Servizi</a></li>
+            <li><a href="#">Progetti</a></li>
+            <li><a href="#">Contatti</a></li>
+        </ul>
+    </nav>
+
+    <!-- Intestazione del sito -->
+    <header>
+        <h1>VortexAi</h1>
+        <p>La prima Intelligenza artificiale creata da me!</p>
+    </header>
+
+    <!-- Contenuto principale -->
+    <main>
+        <section>
+            <h2>VERSIONE</h2>
+            <p>ALPHA 0.1</p>
+        </section>
+
+        <section>
+            <h2>Prova VortexAI</h2>
+            <p>Scrivi un messaggio:</p>
+            <input type="text" id="inputText" placeholder="Inserisci il tuo testo">
+            <button onclick="processInput()">Esegui</button>
+            <p>Risultato: <span id="outputResult"></span></p>
+        </section>
+    </main>
+
+    <!-- Piede di pagina -->
+    <footer>
+        <p>&copy; 2024  VortexAI. Tutti i diritti riservati.</p>
+    </footer>
+
+    <script>
+        function processInput() {
+            var inputText = document.getElementById("inputText").value;
+            var outputResult = document.getElementById("outputResult");
+    
+            fetch("/process_input", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/x-www-form-urlencoded",
+                },
+                body: "user_input=" + encodeURIComponent(inputText),
+            })
+            .then(response => response.json())
+            .then(data => {
+                outputResult.innerHTML = data.assistant_response;
+            });
+        }
+    </script>
+</body>
+
+</html>
+
+

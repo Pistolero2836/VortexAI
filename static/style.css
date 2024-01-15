@@ -1,0 +1,80 @@
+/* Reset dei margini e dei padding per garantire una visualizzazione uniforme */
+body, h1, h2, p, ul, li {
+    margin: 0;
+    padding: 0;
+}
+
+/* Stile di base per il corpo della pagina */
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+}
+
+/* Stile per la barra di navigazione */
+nav {
+    background-color: #333;
+    color: #fff;
+}
+
+nav ul {
+    list-style: none;
+    padding: 10px;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+}
+
+/* Stile per l'intestazione del sito */
+header {
+    background-color: #f2f2f2;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Stile per il contenuto principale */
+main {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+}
+
+/* Stile per le sezioni */
+section {
+    margin-bottom: 30px;
+}
+
+/* Stile per il piede di pagina */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+}
+
+/* Stile per il modulo di input e pulsante */
+input {
+    padding: 8px;
+    font-size: 16px;
+}
+
+button {
+    padding: 10px;
+    font-size: 16px;
+    background-color: #333;
+    color: #fff;
+    cursor: pointer;
+}
+
+/* Stile per il risultato di output */
+#outputResult {
+    font-weight: bold;
+    color: #333;
+}
